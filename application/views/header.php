@@ -43,9 +43,10 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="<?php echo base_url() ?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>R</b>apim</span>
+            <span class="logo-mini"><img src="<?php echo base_url(); ?>assets/images/telkom.png" width="100%"
+                                         height="100%"></span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>RAPIM </b>2017</span>
         </a>
@@ -64,8 +65,10 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN MENU</li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Registration</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Menu 1</span></a></li>
+                <li><a href="<?php echo base_url(); ?>"><i class="fa fa-circle-o text-aqua"></i>
+                        <span>Registration</span></a></li>
+                <li><a href="<?php echo base_url('index.php') ?>/welcome/file"><i class="fa fa-circle-o text-aqua"></i>
+                        <span>File Sharing</span></a></li>
                 <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Menu 2</span></a></li>
                 <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Menu 3</span></a></li>
             </ul>

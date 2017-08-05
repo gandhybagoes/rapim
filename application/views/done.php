@@ -17,7 +17,7 @@
 <div align="center" class="tengah">
     <img src="<?php echo base_url() ?>/assets/images/logo_telkom.png" width="25%" height="30%">
     <br><br>
-    <h1 style="font-size: 60px">Terimakasih Telah Melakukan Absensi</h1>
+    <h1 style="font-size: 60px"><?php echo $msg ?></h1>
 </div>
 </body>
 </html>

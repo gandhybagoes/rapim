@@ -81,7 +81,7 @@ if ($token == null || $token == "") {
 
                     // reset camera for another shot
                     //webcam.reset();
-                    window.location.href = "http://localhost/rapim/index.php/proses/thx";
+                    window.location.href = "http://localhost/rapim/index.php/proses/thx/1";
                 }
                 else {
                     alert("Error occured we are trying to fix now: " + msg);

@@ -20,8 +20,19 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+        $tamu['total'] = $this->model_data->total_undangan();
+        $tamu['hadir'] = $this->model_data->hadir_undangan();
+        $tamu['pengganti'] = $this->model_data->pengganti_undangan();
         $this->load->view('header');
-        $this->load->view('form_register');
+        $this->load->view('form_register', $tamu);
         $this->load->view('template');
 	}
+
+    public function file()
+    {
+        $data['berkas'] = $this->model_data->get_data('data_berkas');
+        $this->load->view('header');
+        $this->load->view('table_file', $data);
+        $this->load->view('template');
+    }
 }

@@ -9,8 +9,8 @@ if (!$file) {
     print "ERROR: Failed to write data to $filename, check permissions\n";
     exit();
 } else {
-    $sql = "Insert into entry(images) values('$newname')";
-    $sql = "UPDATE entry SET images='$newname' WHERE nik='$name'";
+    //$sql = "Insert into entry(images) values('$newname')";
+    $sql = "UPDATE data_undangan SET foto='$newname' WHERE nik='$name'";
     $result = mysqli_query($con, $sql)
     or die("Error in query");
     $value = mysqli_insert_id($con);

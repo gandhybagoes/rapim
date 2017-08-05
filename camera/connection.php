@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$databasename = "webcam";
+$databasename = "rapim";
 
 $con = mysqli_connect($host, $user, $password, $databasename);
 
