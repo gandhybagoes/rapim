@@ -64,7 +64,13 @@
                                         <th>Nama</th>
                                         <th>Posisi</th>
                                         <th>Lokasi Kerja</th>
-                                        <th>Unit</th>
+                                        <?php
+                                        $r = $_GET['r'];
+                                        if ($r == "hadir" || $r == "pengganti") {
+                                            ?>
+                                            <th>Foto</th>
+                                            <th>Waktu Absen</th>
+                                        <?php } ?>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -75,8 +81,19 @@
                                             <td><?php echo $a['nik'] ?></td>
                                             <td><?php echo $a['nama'] ?></td>
                                             <td><?php echo $a['posisi'] ?></td>
-                                            <td><?php echo $a['lokasi_kerja'] ?></td>
                                             <td><?php echo $a['unit'] ?></td>
+                                            <?php
+                                            $r = $_GET['r'];
+                                            if ($r == "hadir" || $r == "pengganti") {
+                                                ?>
+                                                <td><a href="<?php echo base_url() ?>/camera/<?php echo $a['foto'] ?>"
+                                                       target="_blank">
+                                                        <center><img
+                                                                    src="<?php echo base_url() ?>/camera/<?php echo $a['foto'] ?>"
+                                                                    width="20%"></center>
+                                                    </a></td>
+                                                <td><?php echo $a['waktu_absen'] ?></td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

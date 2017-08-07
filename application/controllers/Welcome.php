@@ -20,13 +20,26 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-        $tamu['total'] = count($this->model_data->total_undangan());
+        /*$tamu['total'] = count($this->model_data->total_undangan());
         $tamu['hadir'] = count($this->model_data->hadir_undangan());
         $tamu['pengganti'] = count($this->model_data->pengganti_undangan());
         $this->load->view('header');
         $this->load->view('form_register', $tamu);
+        $this->load->view('template');*/
+
+        $this->load->view('banner');
+    }
+
+    function registrasi()
+    {
+        $tamu['total'] = count($this->model_data->total_undangan());
+        $tamu['hadir'] = count($this->model_data->hadir_undangan());
+        $tamu['pengganti'] = count($this->model_data->pengganti_undangan());
+        $tamu['baru'] = $this->model_data->get_last();
+        $this->load->view('header');
+        $this->load->view('form_register', $tamu);
         $this->load->view('template');
-	}
+    }
 
     public function file()
     {

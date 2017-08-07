@@ -9,6 +9,7 @@ class Proses extends CI_Controller
         $waktu = date("F j, Y, g:i a");
         $nik = $this->input->post('nik');
         $no = $this->input->post('telepon');
+        $alamat = "";//$this->input->post('alamat');
 
         $where = array(
             'nik' => $nik
@@ -16,24 +17,30 @@ class Proses extends CI_Controller
         $cek = $this->model_data->cek_data('data_undangan', $where);
 
         if ($cek != null) {
-            $data = array(
+            if ($cek[0]['status'] != null) {
+                redirect('proses/thx/4');
+            } else {
+                $data = array(
                 'status' => "hadir",
                 'telepon' => $no,
                 'waktu_absen' => $waktu,
-            );
-            $this->model_data->simpan('data_undangan', $data, $where);
+                    'alamat' => $alamat,
+                );
+                $this->model_data->simpan('data_undangan', $data, $where);
 
-            redirect("http://localhost/rapim/camera?t=$nik");
+                redirect(base_url() . "camera?t=$nik");
+            }
         } else {
             $data = array(
                 'nik' => $nik,
                 'status' => "pengganti",
                 'telepon' => $no,
                 'waktu_absen' => $waktu,
+                'alamat' => $alamat,
             );
             $this->model_data->simpan_pengganti('data_undangan', $data);
 
-            redirect("http://localhost/rapim/camera?t=$nik");
+            redirect(base_url() . "camera?t=$nik");
         }
     }
 
@@ -75,16 +82,28 @@ class Proses extends CI_Controller
 
     function thx($msg)
     {
+        $nik = $this->input->get('nik');
+        $where = array(
+            'nik' => $nik
+        );
+
         $pesan['msg'] = "";
+        $pesan['data'] = "";
         if ($msg == "1") {
             $pesan['msg'] = "Terimakasih Telah Melakukan Absensi";
+            $pesan['data'] = $this->model_data->cek_data('data_undangan', $where);
         } elseif ($msg == "0") {
             $pesan['msg'] = "Data Pegawai Tidak Ditemukan, Silahkan Menghubungi Admin";
+            $pesan['data'] = "";
+        } elseif ($msg == "4") {
+            $pesan['msg'] = "Mohon Maaf, Anda Sudah Absen Sebelumnya, Silahkan Menghubungi Admin";
+            $pesan['data'] = "";
         } else {
+            $pesan['data'] = "";
             $pesan['msg'] = "UPLOAD GAGAL, Tidak ada file yang dipilih / extensi file salah, silahkan menghubungi admin";
         }
         $this->load->view('done', $pesan);
-        header('Refresh: 3; URL=http://localhost/rapim');
+        header('Refresh: 5; URL=' . base_url());
     }
 
     function download()

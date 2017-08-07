@@ -65,10 +65,11 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN MENU</li>
-                <li><a href="<?php echo base_url(); ?>"><i class="fa fa-circle-o text-aqua"></i>
+                <li><a href="<?php echo base_url('index.php'); ?>/welcome/registrasi"><i
+                                class="fa fa-circle-o text-aqua"></i>
                         <span>Registration</span></a></li>
                 <li><a href="<?php echo base_url('index.php') ?>/welcome/file"><i class="fa fa-circle-o text-aqua"></i>
-                        <span>File Sharing</span></a></li>
+                        <span>Materi RAPIM 2017</span></a></li>
                 <li><a href="<?php echo base_url('index.php') ?>/welcome/rundown"><i
                                 class="fa fa-circle-o text-aqua"></i> <span>Rundown</span></a></li>
                 <li><a href="<?php echo base_url('index.php') ?>/welcome/tatib""><i

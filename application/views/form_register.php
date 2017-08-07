@@ -21,7 +21,8 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3><?php echo $hadir ?></h3>
+                        <h3><?php echo $hadir ?>[<?php $presentase = round($hadir / $total * 100, 0);
+                            echo $presentase; ?>%]</h3>
 
                         <p>Undangan Hadir</p>
                     </div>
@@ -64,31 +65,38 @@
             <!-- Left col -->
             <section class="col-lg-12 connectedSortable">
                 <!-- quick email widget -->
-                <div class="box box-danger">
+                <div class="box box-success">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Form Registrasi</h3>
+                        <h1 class="box-title">Form Registrasi</h1>
                     </div>
                     <form action="<?php echo base_url('index.php/'); ?>proses/data_pegawai" method="post">
                         <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <input type="text" name="nik" class="form-control"
-                                           placeholder="Nomor Induk Karyawan" required>
-                                </div>
-                                <div class="col-xs-6">
-                                    <input type="text" name="telepon" class="form-control" placeholder="Nomor Telepon"
-                                           required>
-                                </div>
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Nomor Induk Karyawan</h3>
                             </div>
-                        </div>
-                        <!-- /.box-body -->
+                            <input class="form-control input-lg" type="text" name="nik"
+                                   placeholder="Masukkan Nomor Induk Karyawan Anda" required>
+
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Nomor Telepon</h3>
+                            </div>
+                            <input class="form-control input-lg" type="text" name="telepon"
+                                   placeholder="Masukkan Nomor Telepon Anda" required>
+
+                            <!--<div class="box-header with-border">
+                                <h3 class="box-title">Alamat</h3>
+                            </div>
+                            <textarea class="form-control input-lg" rows="3" name="alamat" placeholder="Masukkan Alamat Rumah Anda" required></textarea>-->
+
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary" style="width: 35%; margin-left:33%;">
                                 SELANJUTNYA
                                 <div class="fa fa-fw fa-arrow-right"></div>
                             </button>
                         </div>
+                        </div>
                     </form>
+                    <!-- /.box-body -->
                 </div>
             </section>
             <!-- /.Left col -->
@@ -99,6 +107,60 @@
             <!-- right col -->
         </div>
         <!-- /.row (main row) -->
+        <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-12 connectedSortable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Absensi Terbaru</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>NIK</th>
+                                        <th>Nama</th>
+                                        <th>Posisi</th>
+                                        <th>Lokasi Kerja</th>
+                                        <th>Foto</th>
+                                        <th>Waktu Absen</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php $no = 1;
+                                    foreach ($baru as $a) {
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $a['nik'] ?></td>
+                                            <td><?php echo $a['nama'] ?></td>
+                                            <td><?php echo $a['posisi'] ?></td>
+                                            <td><?php echo $a['unit'] ?></td>
+                                            <td><a href="<?php echo base_url() ?>/camera/<?php echo $a['foto'] ?>"
+                                                   target="_blank">
+                                                    <center><img
+                                                                src="<?php echo base_url() ?>/camera/<?php echo $a['foto'] ?>"
+                                                                width="20%"></center>
+                                                </a></td>
+                                            <td><?php echo $a['waktu_absen'] ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </section>
+        </div>
 
     </section>
     <!-- /.content -->

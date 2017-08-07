@@ -59,6 +59,17 @@ class Model_data extends CI_Model
         return $query->result_array();
     }
 
+    function get_last()
+    {
+        return $this->db->select('*')
+            ->from('data_undangan')
+            ->where('waktu_absen !=', "")
+            ->order_by('waktu_absen', 'DESC')
+            ->limit(3)
+            ->get()
+            ->result_array();
+    }
+
 }
 
 ?>

@@ -1,4 +1,11 @@
 <?php
+$schema = (@$_SERVER["HTTPS"] == "on") ? "https://" : "http://";
+$url = $schema . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+$path = explode("/", $url);
+
+$alamat = $path[0] . '//' . $path[1] . $path[2] . '/' . $path[3] . '/' . $path[4] . '/'; //http://localhost/rapim/camera/
+$alamat2 = $path[0] . '//' . $path[1] . $path[2] . '/' . $path[3] . '/'; //http://localhost/rapim/
+
 error_reporting(0);
 $token = $_GET['t'];
 if ($token == null || $token == "") {
@@ -57,7 +64,7 @@ if ($token == null || $token == "") {
         </div>
 
         <script type="text/javascript">
-            webcam.set_api_url("http://localhost/rapim/camera/handleimage.php?t=<?php echo $token?>");
+            webcam.set_api_url("<?php echo $alamat?>handleimage.php?t=<?php echo $token?>");
             webcam.set_quality(90); // JPEG quality (1 - 100)
             webcam.set_shutter_sound(true); // play shutter click sound
             webcam.set_hook('onComplete', 'my_completion_handler');
@@ -81,7 +88,7 @@ if ($token == null || $token == "") {
 
                     // reset camera for another shot
                     //webcam.reset();
-                    window.location.href = "http://localhost/rapim/index.php/proses/thx/1";
+                    window.location.href = "<?php echo $alamat2?>index.php/proses/thx/1?nik=<?php echo $token?>";
                 }
                 else {
                     alert("Error occured we are trying to fix now: " + msg);
