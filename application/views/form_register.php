@@ -12,7 +12,8 @@
 
                         <p>Total Undangan</p>
                     </div>
-                    <a href="#" class="small-box-footer">More detail data <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url('index.php') ?>/welcome/absensi?r=total" class="small-box-footer">More
+                        detail data <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -24,7 +25,8 @@
 
                         <p>Undangan Hadir</p>
                     </div>
-                    <a href="#" class="small-box-footer">More detail data <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url('index.php') ?>/welcome/absensi?r=hadir" class="small-box-footer">More
+                        detail data <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -36,7 +38,8 @@
 
                         <p>Undangan Pengganti</p>
                     </div>
-                    <a href="#" class="small-box-footer">More detail data <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="<?php echo base_url('index.php') ?>/welcome/absensi?r=pengganti" class="small-box-footer">More
+                        detail data <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->

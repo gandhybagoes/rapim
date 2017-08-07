@@ -38,7 +38,7 @@ class Model_data extends CI_Model
             ->from('data_undangan')
             ->where('posisi !=', '')
             ->get();
-        return $query->num_rows();
+        return $query->result_array();
     }
 
     function hadir_undangan()
@@ -47,7 +47,7 @@ class Model_data extends CI_Model
             ->from('data_undangan')
             ->where('status =', 'hadir')
             ->get();
-        return $query->num_rows();
+        return $query->result_array();
     }
 
     function pengganti_undangan()
@@ -56,7 +56,7 @@ class Model_data extends CI_Model
             ->from('data_undangan')
             ->where('status =', 'pengganti')
             ->get();
-        return $query->num_rows();
+        return $query->result_array();
     }
 
 }

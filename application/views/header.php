@@ -69,8 +69,10 @@
                         <span>Registration</span></a></li>
                 <li><a href="<?php echo base_url('index.php') ?>/welcome/file"><i class="fa fa-circle-o text-aqua"></i>
                         <span>File Sharing</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Menu 2</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Menu 3</span></a></li>
+                <li><a href="<?php echo base_url('index.php') ?>/welcome/rundown"><i
+                                class="fa fa-circle-o text-aqua"></i> <span>Rundown</span></a></li>
+                <li><a href="<?php echo base_url('index.php') ?>/welcome/tatib""><i
+                            class="fa fa-circle-o text-aqua"></i> <span>Tata Tertib RAPIM 2017</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->
