@@ -31,7 +31,7 @@
                 margin-right: auto;
                 left: 0;
                 right: 0;
-                top: 10%
+                top: 5%
 
             }
         </style>
@@ -92,6 +92,7 @@
             </table>
         <?php } ?>
         <h1 style="font-size: 60px"><?php echo $msg ?></h1>
+        <p style="font-size: 50px"><?php echo $msg2 ?></p>
     </div>
     </body>
 

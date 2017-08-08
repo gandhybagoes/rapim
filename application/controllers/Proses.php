@@ -92,6 +92,19 @@ class Proses extends CI_Controller
         if ($msg == "1") {
             $pesan['msg'] = "Terimakasih Telah Melakukan Absensi";
             $pesan['data'] = $this->model_data->cek_data('data_undangan', $where);
+
+            $pesan['ultah'] = $this->model_data->cek_data('data_karyawan', $where);
+            if ($pesan['ultah'] != null || $pesan['ultah'] != "") {
+                $tgl_ultah = $pesan['ultah'][0]['tanggal_lahir'];
+                $tgl_ultah = explode("/", $tgl_ultah);
+                if ($tgl_ultah[1] == "08") {
+                    $pesan['msg2'] = "Selamat!!!, Anda Akan Berulang Tahun di Bulan Agustus ini";
+                } else {
+                    $pesan['msg2'] = " ";
+                }
+            } else {
+                $pesan['msg2'] = " ";
+            }
         } elseif ($msg == "0") {
             $pesan['msg'] = "Data Pegawai Tidak Ditemukan, Silahkan Menghubungi Admin";
             $pesan['data'] = "";
@@ -110,6 +123,21 @@ class Proses extends CI_Controller
     {
         $file = $this->input->get('f');
         force_download('assets/files/' . $file, null);
+    }
+
+    function simpan_kamar()
+    {
+        $id = $this->input->get('no');
+        $nomor_kamar = $this->input->post('nomor_kamar');
+
+        $where = array(
+            'kamar' => $id,
+        );
+        $data = array(
+            'nomor_kamar' => $nomor_kamar,
+        );
+        $this->model_data->simpan('data_kamar', $data, $where);
+        redirect(base_url('index.php') . "/welcome/kamar");
     }
 }
 

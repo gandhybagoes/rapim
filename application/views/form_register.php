@@ -21,8 +21,13 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3><?php echo $hadir ?>[<?php $presentase = round($hadir / $total * 100, 0);
-                            echo $presentase; ?>%]</h3>
+                        <table>
+                            <tr>
+                                <td width="70%"><h3><?php echo $hadir ?></h3></td>
+                                <td><h3>[<?php $presentase = round($hadir / $total * 100, 0);
+                                        echo $presentase; ?>%]</h3></td>
+                            </tr>
+                        </table>
 
                         <p>Undangan Hadir</p>
                     </div>

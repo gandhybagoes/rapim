@@ -33,6 +33,9 @@
         <a href="<?php echo base_url('index.php'); ?>/welcome/tatib">
             <button type="button" class="btn btn-primary">Tata Tertib</button>
         </a>
+        <a href="<?php echo base_url('index.php'); ?>/welcome/kamar">
+            <button type="button" class="btn btn-primary">Data Kamar Hotel</button>
+        </a>
     </div>
 </center>
 </body>

@@ -74,6 +74,8 @@
                                 class="fa fa-circle-o text-aqua"></i> <span>Rundown</span></a></li>
                 <li><a href="<?php echo base_url('index.php') ?>/welcome/tatib""><i
                             class="fa fa-circle-o text-aqua"></i> <span>Tata Tertib RAPIM 2017</span></a></li>
+                <li><a href="<?php echo base_url('index.php') ?>/welcome/kamar""><i
+                            class="fa fa-circle-o text-aqua"></i> <span>Data Kamar Hotel</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->

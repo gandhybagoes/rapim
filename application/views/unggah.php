@@ -8,12 +8,13 @@
 
     <!-- Main content -->
     <section class="content">
-        <!--<div class="box box-primary">
+        <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Upload File</h3>
             </div>
-
-            <form role="form" action="<?php /*echo base_url('index.php') */ ?>/proses/upload" enctype="multipart/form-data"
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" action="<?php echo base_url('index.php') ?>/proses/upload" enctype="multipart/form-data"
                   method="post" accept-charset="utf-8">
                 <div class="box-body">
                     <div class="form-group">
@@ -23,13 +24,13 @@
                         <p class="help-block">file extension (pdf, rar, zip, xlxs, docx, pptx, jpg, png, jpeg)</p>
                     </div>
                 </div>
+                <!-- /.box-body -->
 
                 <div class="box-footer">
                     <button type="submit" class="btn btn-primary">Upload</button>
                 </div>
             </form>
-
-        </div>-->
+        </div>
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">

@@ -82,4 +82,20 @@ class Welcome extends CI_Controller {
         $this->load->view('table', $tamu);
         $this->load->view('template');
     }
+
+    public function kamar()
+    {
+        $data['kamar'] = $this->model_data->get_data('data_kamar');
+        $this->load->view('header');
+        $this->load->view('table_kamar', $data);
+        $this->load->view('template');
+    }
+
+    public function unggah()
+    {
+        $data['berkas'] = $this->model_data->get_data('data_berkas');
+        $this->load->view('header');
+        $this->load->view('unggah', $data);
+        $this->load->view('template');
+    }
 }

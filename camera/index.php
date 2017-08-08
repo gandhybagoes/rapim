@@ -39,7 +39,7 @@ if ($token == null || $token == "") {
     </style>
     <html>
     <body style="background-color:#dfe3ee;">
-    <div id="outer" style="margin:0px; width:100%; height:90px;background-color:#3B5998;">
+    <div id="outer" style="margin:0px; width:100%; height:90px;background-color:#e41b13;">
         <center><h1 style="color: white; font-size: 200%; padding-top: 3px; padding-bottom: 0px">RAPIM TREG-5 SM-1</h1>
         </center>
         <center><p style="color: white; font-size: 150%;">Jawa Timur, Bali & Nusa Tenggara | Mataram, 10-12 Agustus
